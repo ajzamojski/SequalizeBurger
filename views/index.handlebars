@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center">Eat Your Burger</h1>
+    <img src="/assets/img/burger_facts.png" class="img-responsive">
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-4">
+      <h2>Menu</h2>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div class="mainlistitem">
+              <div class="items">
+               <span>
+                {{this.burger_name}}
+                </span>
+              </div> 
+              <div class="formdiv">
+                  <form action="/index{{this.id}}?_method=PUT" method="POST" id="displayForm">
+                    <input type="text" name="personName" placeholder="enter name">
+                    <input type="hidden" name="devour" value="true">
+                    <button type="submit" id="buttontag">Devour</button>
+                  </form>
+              </div>
+            </div>
+            <br>
+          {{/unless}}
+        {{/each}}
+
+    </div>
+    <div class="col-md-4">
+    <h2 id="burgerAte">Burgers Eaten</h2>
+      <div id="devouredItems">
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <span>
+              -{{this.burger_name}}
+              Eaten by: <i>{{this.Customer.customerName}}</i>
+            </span>
+            <br>
+          {{/if}}
+        {{/each}}
+      </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 id="addBurgerhead">Add a Sandwich</h2>
+      <form class="create-update-form" action="/index" method="POST">
+        <div class="form-group">
+          <label for="bu"></label>
+          <textarea rows="4" cols="50" id="burgerBox" name="name" placeholder="Enter a burger"></textarea>
+        </div>
+        <div class="centerAlign">
+          <button type="submit">Add Burger</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
