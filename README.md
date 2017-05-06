@@ -1,7 +1,7 @@
 # Burger Sequalize
 
 ## Description
-This burger app is similar to the previous app: `https://github.com/ajzamojski/burger`
+This burger app is similar to the previous app: https://github.com/ajzamojski/burger
 but built with sequalize ORM (Object-Relational Mapping).
 
 The burger app will allow users to enter burger information which
@@ -17,7 +17,7 @@ burger objects and retrieve the information to the user. When
 a burger is inputed, it is first created in mysql table and then
 the sql table is retrieved and displayed to the user. Each burger
 has a “devour” button which sends a request to mysql using javascript
-and routing to update the database. **New feature: ** Along with the summit
+and routing to update the database. **New feature:** Along with the summit
 button, a user enters a a name which creates a new customer in a new
 table that gets linked with the burger table and displayed who 
 ate the burger. ![screenshot2](screenshot2.png)
